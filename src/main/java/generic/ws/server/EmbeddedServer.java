@@ -143,7 +143,7 @@ public class EmbeddedServer {
 
 	}
 
-	public static Server buildServer(int iPort){
+	public static Server buildServer(int iPortHttp, int iPortHttps){
 
 
 		// === jetty.xml ===
@@ -157,7 +157,7 @@ public class EmbeddedServer {
 		// HTTP Configuration
 		HttpConfiguration http_config = new HttpConfiguration();
 		http_config.setSecureScheme("https");
-		http_config.setSecurePort(iPort+1);
+		http_config.setSecurePort(iPortHttps);
 		http_config.setOutputBufferSize(32768);
 		http_config.setRequestHeaderSize(8192);
 		http_config.setResponseHeaderSize(8192);
@@ -167,7 +167,7 @@ public class EmbeddedServer {
 
 		// === jetty-http.xml ===
 		ServerConnector http = new ServerConnector(server,new HttpConnectionFactory(http_config));
-		http.setPort(iPort);
+		http.setPort(iPortHttp);
 		http.setIdleTimeout(30000);
 		server.addConnector(http);
 		
@@ -211,7 +211,7 @@ public class EmbeddedServer {
 		ServerConnector sslConnector = new ServerConnector(server,
 				new SslConnectionFactory(sslContextFactory,"http/1.1"),
 				new HttpConnectionFactory(https_config));
-		sslConnector.setPort(iPort+1);
+		sslConnector.setPort(iPortHttps);
 		server.addConnector(sslConnector);
 		
 
@@ -261,11 +261,12 @@ public class EmbeddedServer {
 
 			try {
 
-				int httpServerPort = 10110;
+				int httpServerPort_http = 80;
+				int httpServerPort_https = 443;
 
 				buildDirectory();
 
-				Server server = buildServer(httpServerPort);
+				Server server = buildServer(httpServerPort_http, httpServerPort_https);
 
 				addWebAppHandler(server);
 
@@ -276,7 +277,7 @@ public class EmbeddedServer {
 
 				if(Desktop.isDesktopSupported())
 				{
-					Desktop.getDesktop().browse(new URI("http://localhost:"+httpServerPort+CONTEXTPATH)); // Now using https connection
+					Desktop.getDesktop().browse(new URI("http://localhost:"+httpServerPort_https+CONTEXTPATH)); // Now using https connection
 				}
 
 			} catch (Exception e) {
