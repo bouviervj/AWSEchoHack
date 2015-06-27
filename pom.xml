@@ -192,6 +192,55 @@
 		<dependency>
 
 			<groupId>common</groupId>
+			<artifactId>alexa</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/alexa-appkit-1.0.81.2.jar</systemPath>
+
+		</dependency>
+		
+		<dependency>
+
+			<groupId>common</groupId>
+			<artifactId>jackson1</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jackson-core-2.3.2.jar</systemPath>
+
+		</dependency>
+		
+		<dependency>
+
+			<groupId>common</groupId>
+			<artifactId>jackson2</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jackson-databind-2.3.2.jar</systemPath>
+
+		</dependency>
+		
+		<dependency>
+
+			<groupId>common</groupId>
+			<artifactId>jackson2</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jackson-annotations-2.3.2.jar</systemPath>
+
+		</dependency>
+		
+
+		<dependency>
+
+			<groupId>common</groupId>
 			<artifactId>common</artifactId>
 			<version>1.0</version>
 
@@ -200,6 +249,44 @@
 			<systemPath>${basedir}/lib/commons-lang3-3.3.2.jar</systemPath>
 
 		</dependency>
+		
+		<dependency>
+
+			<groupId>common</groupId>
+			<artifactId>codec</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/commons-codec-1.6.jar</systemPath>
+
+		</dependency>
+		
+		<dependency>
+
+			<groupId>common</groupId>
+			<artifactId>coomonio</artifactId>
+			<version>1.0</version>
+
+			<!-- to migrate to a repository -->
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/JakartaCommons-IO-2.4.jar</systemPath>
+
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+				
 
 		<dependency>
 			<groupId>commons-cli</groupId>
@@ -214,6 +301,20 @@
 			<version>1.5.2</version>
 		</dependency>
 		-->
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		
+		
 
 		<!-- Web integration -->
 

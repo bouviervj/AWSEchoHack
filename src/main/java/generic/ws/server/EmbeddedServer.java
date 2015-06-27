@@ -38,6 +38,9 @@ import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
 
+import com.amazon.speech.speechlet.Speechlet;
+import com.amazon.speech.speechlet.servlet.SpeechletServlet;
+
 public class EmbeddedServer {
 
 	protected static final Logger LOGGER = Logger.getLogger(EmbeddedServer.class.getName());
@@ -129,9 +132,13 @@ public class EmbeddedServer {
 
 			ctx.addServlet(holderPwd, "/*");
 			
+			ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+	        context.setContextPath("/echo");
+	        
+	        context.addServlet(new ServletHolder(createServlet(new generic.ws.restjson.services.SessionSpeechlet())), "/session");
 			
 			ContextHandlerCollection contexts = new ContextHandlerCollection();
-			contexts.setHandlers(new Handler[] {aContext, ctx});
+			contexts.setHandlers(new Handler[] {aContext, ctx, context});
 
 			
 			aServer.setHandler(contexts);
@@ -142,6 +149,12 @@ public class EmbeddedServer {
 		}
 
 	}
+	
+	 private static SpeechletServlet createServlet(final Speechlet speechlet) {
+	        SpeechletServlet servlet = new SpeechletServlet();
+	        servlet.setSpeechlet(speechlet);
+	        return servlet;
+	    }
 
 	public static Server buildServer(int iPortHttp, int iPortHttps){
 

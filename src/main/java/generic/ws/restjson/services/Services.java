@@ -18,6 +18,7 @@ public class Services {
 
 	protected static final Logger LOGGER = Logger.getLogger(Services.class.getName());
 	
+	/*
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/simple")
@@ -33,14 +34,15 @@ public class Services {
 		LOGGER.info("Executing simple code with argument :"+iPath);
 		return new String[]{"This is a test"};
 	}
+	*/
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/simplePost")
-	public Object simplePost( @Context SecurityContext sc,
-									   String[] iList) { 
-		return null;
+	public String[] simplePost( @Context SecurityContext sc,
+									   Object iObject) { 
+		return new String[]{"This is a test"};
 	}
 	
 	@GET
