@@ -248,7 +248,7 @@ public class EmbeddedServer {
 
 		LogManager.getRootLogger().setLevel((Level)org.apache.log4j.Level.DEBUG);
 
-		//org.eclipse.jetty.util.log.Log.getRootLogger().setDebugEnabled(true);
+		org.eclipse.jetty.util.log.Log.getRootLogger().setDebugEnabled(true);
 
 		System.setProperty("jsse.enableSNIExtension", "false");
 
