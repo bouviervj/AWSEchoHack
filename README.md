@@ -37,7 +37,7 @@ openssl req -new -x509 -days 365 -key private-key.pem -config server.cnf -out ce
 ```
 Prepare a key entry for the keystore:
 ```
-openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -inkey private-key.pem -in certificate.pem -export            -out keystore.pkcs12
+openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -inkey private-key.pem -in certificate.pem -export -out keystore.pkcs12
 ```
 Create a keystore:
 ```
