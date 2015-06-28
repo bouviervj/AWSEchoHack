@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "WhatsTheTemperatureIntent",
+      "slots": [
+        {
+          "name": "Room",
+          "type": "LITERAL"
+        }
+      ]
+    }
+  ]
+}

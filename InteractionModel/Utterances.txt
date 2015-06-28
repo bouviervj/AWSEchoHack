@@ -1,0 +1,10 @@
+WhatsTheTemperatureIntent whats the temperature in the {kitchen|Room}
+WhatsTheTemperatureIntent what is the temperature in the {kitchen|Room}
+WhatsTheTemperatureIntent whats the temperature in the {baby|Room} room
+WhatsTheTemperatureIntent what is the temperature in the {baby|Room} room
+WhatsTheTemperatureIntent whats the temperature in the {living|Room} room
+WhatsTheTemperatureIntent what is the temperature in the {living|Room} room
+WhatsTheTemperatureIntent give me the temperature in the {kitchen|Room}
+WhatsTheTemperatureIntent give me the temperature in the {baby|Room} room
+WhatsTheTemperatureIntent give me the temperature in the {living|Room} room
+
